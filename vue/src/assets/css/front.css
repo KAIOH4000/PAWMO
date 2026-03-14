@@ -1,0 +1,245 @@
+.front-header {
+    display: flex;
+    height: 70px;
+    line-height: 70px;
+    background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+    width: 80%;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+}
+
+/* 头部滚动效果 */
+.header-scrolled .front-header {
+    height: 60px;
+    line-height: 60px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.front-header-left {
+    width: 250px;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    transition: all 0.3s ease;
+}
+
+.front-header-left:hover {
+    transform: scale(1.02);
+}
+
+.front-header-left img, .front-header-dropdown img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.front-header-left:hover img {
+    transform: rotate(10deg);
+    border-color: #f89524;
+}
+
+.front-header-dropdown img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.front-header-left .title {
+    flex: 1;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 22px;
+    font-weight: bold;
+    background: linear-gradient(135deg, #f89524 0%, #ff6b35 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transition: all 0.3s ease;
+}
+
+.front-header-left:hover .title {
+    text-shadow: 0 2px 10px rgba(248, 149, 36, 0.3);
+}
+
+.front-header-center {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 40px;
+    padding-left: 30px;
+    margin-left: 0;
+}
+
+.front-header-right {
+    width: 100px;
+    padding-right: 20px;
+    text-align: right;
+    cursor: pointer;
+}
+
+.front-header-dropdown {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    margin-top: 10px;
+}
+
+.el-dropdown-menu {
+    width: 120px !important;
+    text-align: center !important;
+}
+
+.el-dropdown-menu__item {
+    white-space: nowrap !important;
+}
+
+/* ElementUI 样式覆盖 */
+.el-menu.el-menu--horizontal {
+    border: none !important;
+    height: 59px;
+}
+
+/* 顶部头部阴影 */
+.header {
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+.header:hover {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+/* 导航菜单项 */
+.menu-item {
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 70px;
+    font-size: 14px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+    padding: 8px 16px;
+    border-radius: 8px;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+/* 菜单项下划线动画 */
+.menu-item::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #f89524 0%, #ff6b35 100%);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+/* 菜单项悬停效果 */
+.menu-item:hover {
+    color: #f89524;
+    background: rgba(248, 149, 36, 0.08);
+}
+
+.menu-item:hover::after {
+    width: 60%;
+    left: 20%;
+}
+
+/* 菜单项激活状态 */
+.menu-item-active {
+    color: #fff;
+    font-weight: bold;
+    background: linear-gradient(135deg, #f89524 0%, #ff6b35 100%);
+}
+
+.menu-item-active::after {
+    width: 0;
+}
+
+/* 右边按钮样式 */
+.front-header-right-button{
+    display: flex;
+    margin-top: 18px;
+    gap: 10px;
+}
+
+.front-header-right-button .el-button {
+    border-radius: 20px;
+    padding: 10px 25px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.front-header-right-button .el-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.front-header-right-button .el-button--primary {
+    background: linear-gradient(135deg, #409eff 0%, #66b1ff 100%);
+    border: none;
+}
+
+.front-header-right-button .el-button--success {
+    background: linear-gradient(135deg, #67c23a 0%, #85ce61 100%);
+    border: none;
+}
+
+/* 购物车图标 */
+.el-icon-shopping-cart-2 {
+    transition: all 0.3s ease;
+    padding: 8px;
+    border-radius: 50%;
+}
+
+.el-icon-shopping-cart-2:hover {
+    background: rgba(248, 149, 36, 0.1);
+    color: #f89524 !important;
+    transform: scale(1.1);
+}
+
+/* 下拉菜单样式 */
+.el-dropdown-menu {
+    border-radius: 10px !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12) !important;
+    padding: 8px 0 !important;
+    animation: fadeInDown 0.2s ease;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.el-dropdown-menu__item {
+    padding: 12px 25px !important;
+    transition: all 0.2s ease;
+}
+
+.el-dropdown-menu__item:hover {
+    background: linear-gradient(90deg, rgba(248, 149, 36, 0.1) 0%, transparent 100%) !important;
+    color: #f89524 !important;
+    padding-left: 30px !important;
+}
+
+/* 主体内容区域 */
+.main-body {
+    min-height: calc(100vh - 70px);
+}

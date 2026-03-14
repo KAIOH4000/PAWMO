@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 14px;
+    background-color: #ffffff;
+    background-image: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cg stroke='%23ffb366' stroke-width='2' stroke-opacity='0.25' fill='none'%3E%3Cellipse cx='60' cy='78' rx='24' ry='21'/%3E%3Cellipse cx='36' cy='42' rx='10' ry='15' transform='rotate(-15 36 42)'/%3E%3Cellipse cx='63' cy='30' rx='10' ry='16'/%3E%3Cellipse cx='90' cy='42' rx='10' ry='15' transform='rotate(15 90 42)'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+.w-e-text img {
+    width: 100% !important;
+}
+
+.card {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+}
+
+.line1 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.line2 {
+    word-break: break-all;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; /* 超出几行省略 */
+    overflow: hidden;
+}

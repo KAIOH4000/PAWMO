@@ -1,0 +1,35 @@
+server:
+  port: 9999
+  tomcat:
+    max-connections: 30000
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/ku1?useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2b8
+    username: root
+    password: 123456
+  servlet:
+    multipart:
+      max-file-size: 200MB
+      max-request-size: 200MB
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+ip: localhost
+
+# 支付宝沙箱配置
+alipay:
+  app-id: "9021000162612447"
+  private-key: MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQCXU/8pMlwppTMyab5q4PB9fWVED7fm14rp/+I11N9ZQjIrRmWOeNuklxA5qXxEOQQtlEV+Dc4tZ8uhBUiO2AEt5pyByktHxdVX8VTlscoUKU2aXA7iywUlcL9WUbTahn8aXL5IiZq6gHRgOxdV80qCAX9TgYZAHTimtX8sh9xaMCBk8h1m0BlCHS4wV2nR+wIhcLjE+atOczHY1euAJRxexro6pTCieUKZ0Ios2Lo7CtmuPcalFFrlcha4ssYSx+WKPwZDa16z93+6x13WmFxXAayw2zlOJ4qSWLuzOxr025KLsu5T+cYceUeR4pxSXsHzoABqkFirQBwOCWE3KMcjAgMBAAECggEBAIM1mXAm8jJJwvJbLXeOQfcM2tkAp/vHt/Lco075nA7Qjp9nEndN42P6d18HzW954F2EyhxZ7AMClFSxOBBiyeL6qYj/1fYNWsY9wdbHKOgCR/8nAuEyFuw3ri8x+RXguCQrdfF/HmHHLyChG8KyiE/g7H2DONwueghSJkp+IlkvN3R6QicBbJMfMEdvsXV/R40ycbBrrsr6dRrXIwhgrtTHoZXH3R/UCSAgUQRg+2Fuws3009/hqhlT5TM0lVCfEvlCAIufUpQCmVMxqJ3jv5OMrGGHHBA6xm954vG7Rl4Q2e08dUCoKQ27P62TkUiNFtS8wHnCEpYVqdODFdVv54ECgYEA6ASnpC23p0EAUEdDyZQdhRgDQZ1rB5+kGum2KuEqPCsAhX9qI2JRwEbKWoK8NgZGK3OcKwuK1HWNiAbv0RZ5QVl8UuWtnIG+cUhDDk6lX+DeuPhA4JUE150NWrbw4X9BFEYmse1KaVtBnkop0GzfeP1ir/wg0ry/uqw9GqyLJqsCgYEApvg7hcux0fYab8+hu2StmmPhvTSdrAzoGgu4uHEec7GjAE2fhXL3kfKJHk68+Pfr1pLlyhJScgY6s8jkVCWN8wwDIk+4ywLgqNt9u+igtzrLMTcgpYeey2uCAZq8E+8+6a7LjIiTR1Hd93MZycmb1RTbujgAiHQtRR7Y9LnNwWkCgYAbtpKflaZeH/F9pUV/imWMRDX/XGIwYu0jGc9ch9CXpztEttdiqpfBM7Nv5DW+7jjrb7+zlIlcnz3shYeXneuV1q526GA4VXb96Pe5ecNfFGkGBwEY0jPl3Sh/MWLMTHrlhQuSLRm6Q+AunAUqlBaNSRbEloUFJu5vyaryyLFGSQKBgQCZ5bdHTUarVgFsCZ7y0ItLAMEy2epyiLruNtud9XWyAYtSXjmokR0rwrcr3jtD54/TCTcQF+8x9hfpWkNKZAsAeJPy7jRPumlEenrb1kE8Yc6joEJRED4HFSKRRAQTA7OjRF+NOt01IXpL+CVO3qrprf4RGEk1fI+1ZAdpGlFR8QKBgQDBLjbapZHr/ktPEIwTNaZwJy5CqjkYRDmp2LXLhBB2+7PJg19cpE4jztAPxbSKgVDEL7YOdCAzdo12/EZTyrBKMncOgPVFKUJN5eocUfPgoxrCj/FYJv07gAZBimZWFFu727sUKjMr0ToMai3pAe+3K8h0yHBKP4q7nMYiJWeE7g==
+  alipay-public-key: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsj6z4xx87ppu2qavFvkTnJcyWsm4lScdeZZs2MRZI/nRsOOAWZzGeao2PLcBeI0tublN0EAxYkhO3St1gW2aRuFOjqn08JpBhp/kBhI/gi4glO5xJ2CZV2kaKo8AaNl7zgHxhJ/Wuo9zO7ddAB4OVVa2Gs7UZg966/KZhsMOlOW/UKtOajVgKjGNyxrMkdLLBupxLcWnSagMfKexGOYHxc6a8UT8sYI8tBmUJxyludlQzD05WYw7+zHuCZv4fyJh9gEe7D+pH1/Y+vfZiUfOWmjpU/WTDHMkutGW8swY/PtTO/LoqMBpDAB5fzpKoaqKiOn5vymxaCqiqTMXyBWJNwIDAQAB
+  gateway-url: https://openapi-sandbox.dl.alipaydev.com/gateway.do
+  sign-type: RSA2
+  charset: utf-8
+  format: json
+  notify-url: http://localhost:9999/orders/alipay/notify
+  return-url: http://localhost:8085/front/orders

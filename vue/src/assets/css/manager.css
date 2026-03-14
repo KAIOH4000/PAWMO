@@ -1,0 +1,582 @@
+.manager-container {
+    background: linear-gradient(135deg, #fff8f0 0%, #ffffff 100%);
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* 页面切换动画 */
+.fade-enter-active, .fade-leave-active {
+    transition: opacity 0.3s ease;
+}
+.fade-enter, .fade-leave-to {
+    opacity: 0;
+}
+
+/* 卡片悬浮动画 */
+@keyframes cardFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+/* 按钮脉冲动画 */
+@keyframes btnPulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(248, 149, 36, 0.4); }
+    50% { box-shadow: 0 0 0 8px rgba(248, 149, 36, 0); }
+}
+
+/* 表格行动画 */
+@keyframes slideInRow {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* 顶部背景色 - 改为白色配橙色渐变 */
+.manager-header {
+    display: flex;
+    background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+    box-shadow: 0 4px 15px rgba(248, 149, 36, 0.15);
+    position: relative;
+    z-index: 100;
+    border-bottom: 2px solid rgba(248, 149, 36, 0.1);
+}
+
+/* 左侧顶部样式 */
+.manager-header-left {
+    width: 200px;
+    height: 70px;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.manager-header-left:hover {
+    transform: scale(1.02);
+}
+
+/* 左侧顶部系统图标样式 */
+.manager-header-left img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.manager-header-left:hover img {
+    transform: rotate(10deg);
+    border-color: #f89524;
+}
+
+/* 左侧顶部系统名称样式 */
+.manager-header-left .title {
+    flex: 1;
+    margin-left: 10px;
+    font-size: 22px;
+    font-weight: bold;
+    background: linear-gradient(135deg, #f89524 0%, #ff6b35 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transition: all 0.3s ease;
+}
+
+.manager-header-left:hover .title {
+    text-shadow: 0 2px 10px rgba(248, 149, 36, 0.3);
+    letter-spacing: 1px;
+}
+
+/* 顶部样式 */
+.manager-header-center {
+    flex: 1;
+    width: 0;
+    display: flex;
+    align-items: center
+}
+
+/* 顶部右侧用户名样式 */
+.manager-header-right {
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+/* 顶部右侧用户头像样式 */
+.manager-header-right .avatar {
+    display: flex;
+    align-items: center;
+    padding-right: 10px;
+    color: #333;
+    cursor: default
+}
+
+/* 顶部右侧用户头像样式 */
+.manager-header-right .avatar img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    margin-right: 5px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.manager-header-right .avatar:hover img {
+    transform: scale(1.1);
+    border-color: #f89524;
+    box-shadow: 0 4px 12px rgba(248, 149, 36, 0.2);
+}
+
+/* 后台系统表格设置 */
+.manager-main {
+    display: flex;
+}
+
+/* 左侧菜单高度设置 */
+.manager-main-left {
+    width: 200px;
+    min-height: calc(100vh - 70px);
+    background: #fff;
+    box-shadow: 4px 0 15px rgba(248, 149, 36, 0.08);
+    transition: all 0.3s ease;
+    border-right: 1px solid rgba(248, 149, 36, 0.1);
+}
+
+.manager-main-left:hover {
+    box-shadow: 4px 0 25px rgba(248, 149, 36, 0.12);
+}
+
+/* 表格主体跟左侧、顶部边距设置 */
+.manager-main-right {
+    flex: 1;
+    width: 0;
+    padding: 20px;
+}
+
+.manager-main-right .search {
+    padding: 15px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(248, 149, 36, 0.08);
+}
+
+.manager-main-right .operation {
+    margin-top: 10px;
+    padding: 15px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(248, 149, 36, 0.08);
+}
+
+.manager-main-right .table {
+    margin-top: 10px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(248, 149, 36, 0.1);
+    transition: all 0.3s ease;
+}
+
+.manager-main-right .table:hover {
+    box-shadow: 0 8px 30px rgba(248, 149, 36, 0.15);
+}
+
+.manager-main-right .table .pagination {
+    margin-top: 15px;
+}
+
+/* ElementUI */
+/* 左侧菜单背景色 */
+.el-menu {
+    width: 200px;
+    height: 100%;
+    background-color: #fff !important;
+    border-right: none !important;
+}
+
+/* 左侧菜单一级标题背景色及字体颜色 */
+.el-submenu__title {
+    color: #303133;
+    background-color: #fff !important;
+    height: 50px;
+    line-height: 50px;
+    font-weight: 500;
+}
+
+/* 左侧菜单背景色及字体颜色 */
+.el-menu-item {
+    color: #606266;
+    height: 50px;
+    line-height: 50px;
+    background-color: #fff !important;
+}
+
+.el-menu-item i {
+    color: #909399;
+    transition: all 0.3s ease;
+}
+
+/* 左侧菜单一级标题图标颜色 */
+.el-submenu__title i{
+    color: #f89524 !important;
+}
+
+/* 左侧菜单图标颜色 */
+.el-menu-item i {
+    color: #909399 !important;
+}
+
+/* 左侧菜单鼠标点击背景色及字体颜色 */
+.el-menu-item.is-active {
+    background: linear-gradient(90deg, rgba(248, 149, 36, 0.1) 0%, rgba(248, 149, 36, 0.05) 100%) !important;
+    color: #f89524;
+    border-right: 3px solid #f89524;
+}
+
+.el-menu-item.is-active i  {
+    color: #f89524 !important;
+}
+
+/* 左侧菜单二级菜单边距 */
+.el-menu--inline .el-menu-item {
+    padding-left: 50px !important;
+}
+
+/* 鼠标浮上去字体颜色 */
+.el-menu .is-active {
+    color: #f89524 !important;
+}
+
+/* 左侧菜单一级菜单鼠标悬浮背景色 */
+.el-submenu__title:hover {
+    background-color: #fff8f0 !important;
+}
+
+/* 左侧菜单鼠标悬浮背景色及字体颜色 */
+.el-menu-item:not(.is-active):hover {
+    background-color: #fff8f0 !important;
+    color: #f89524;
+}
+
+/* 左侧菜单鼠标悬浮背景色及字体颜色 */
+.el-menu-item:hover {
+    color: #f89524 !important;
+    background-color: #fff8f0 !important;
+}
+
+.el-menu-item:hover i{
+    color: #f89524 !important;
+    transform: scale(1.1);
+}
+
+/* 菜单项动画 */
+.el-menu-item {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.el-menu-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background: #f89524;
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+.el-menu-item:hover::before,
+.el-menu-item.is-active::before {
+    transform: scaleY(1);
+}
+
+/* 子菜单标题动画 */
+.el-submenu__title {
+    transition: all 0.3s ease;
+}
+
+.el-submenu__title:hover {
+    background-color: #fff8f0 !important;
+}
+
+.el-submenu__icon-arrow {
+    color: #f89524 !important;
+    margin-top: -5px;
+}
+
+/* 顶部面包屑字体颜色 */
+.el-breadcrumb__inner {
+    color: #606266 !important;
+    font-weight: 500;
+}
+
+.el-breadcrumb__inner:hover {
+    color: #f89524 !important;
+}
+
+.el-dropdown-menu {
+    margin-top: 20px !important;
+    border-radius: 12px !important;
+    box-shadow: 0 8px 24px rgba(248, 149, 36, 0.15) !important;
+    animation: fadeInUp 0.2s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.el-dropdown-menu__item {
+    transition: all 0.2s ease;
+    padding: 12px 20px !important;
+}
+
+.el-dropdown-menu__item:hover {
+    background-color: #fff8f0 !important;
+    color: #f89524 !important;
+    padding-left: 25px !important;
+}
+
+/* 顶部面包屑左边距 */
+.el-breadcrumb {
+    margin-left: 10px;
+}
+
+/* 表格背景色及字体颜色 */
+th.el-table__cell {
+    color: #303133;
+    font-weight: 600;
+    background: linear-gradient(180deg, #fff8f0 0%, #fff 100%) !important;
+}
+
+/* 表格行动画效果 */
+.el-table__row {
+    animation: slideInRow 0.4s ease-out;
+    transition: all 0.2s ease;
+}
+
+.el-table__row:hover {
+    background-color: #fff8f0 !important;
+    transform: translateX(5px);
+}
+
+/* 表格按钮动画 */
+.el-table .el-button {
+    transition: all 0.2s ease;
+}
+
+.el-table .el-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(248, 149, 36, 0.3);
+}
+
+/* 操作按钮组 */
+.el-table .el-button + .el-button {
+    margin-left: 8px;
+}
+
+/* 右侧抽屉内容 */
+.drawer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px 10px;
+    border-bottom: 2px solid #f89524;
+}
+
+.drawer-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #f89524;
+}
+
+.drawer-actions {
+    display: flex;
+    gap: 5px;
+}
+
+.drawer-content {
+    padding: 20px;
+    overflow-y: auto;
+    max-height: calc(100vh - 100px);
+}
+
+.image-container {
+    margin: 20px 0;
+    text-align: center;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(248, 149, 36, 0.15);
+}
+
+.drawer-footer {
+    padding: 20px;
+    border-top: 1px solid #eee;
+    text-align: right;
+}
+
+/* 卡片悬浮效果增强 */
+.el-card {
+    transition: all 0.3s ease;
+    border-radius: 12px !important;
+    border: none !important;
+    box-shadow: 0 4px 15px rgba(248, 149, 36, 0.08);
+}
+
+.el-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(248, 149, 36, 0.15) !important;
+}
+
+/* 按钮动画效果 */
+.el-button {
+    transition: all 0.2s ease;
+    border-radius: 8px !important;
+}
+
+.el-button:not(.is-disabled):hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(248, 149, 36, 0.3);
+}
+
+.el-button:not(.is-disabled):active {
+    transform: translateY(0);
+}
+
+/* 主要按钮脉冲效果 */
+.el-button--primary:not(.is-disabled) {
+    animation: btnPulse 2s infinite;
+    background: linear-gradient(90deg, #f89524 0%, #ff7f20 100%) !important;
+    border-color: #f89524 !important;
+}
+
+.el-button--primary:hover {
+    animation: none;
+    background: linear-gradient(90deg, #ff7f20 0%, #f89524 100%) !important;
+}
+
+/* 输入框焦点效果 */
+.el-input__inner {
+    transition: all 0.3s ease;
+    border-radius: 8px !important;
+    border: 1px solid #e4e7ed !important;
+}
+
+.el-input__inner:focus {
+    border-color: #f89524 !important;
+    box-shadow: 0 0 0 2px rgba(248, 149, 36, 0.1) !important;
+    transform: translateY(-1px);
+}
+
+/* 分页器样式优化 */
+.el-pagination {
+    padding: 20px 0 !important;
+}
+
+.el-pagination .el-pager li {
+    transition: all 0.2s ease;
+    border-radius: 8px;
+}
+
+.el-pagination .el-pager li:hover {
+    transform: scale(1.15);
+    color: #f89524;
+}
+
+.el-pagination .el-pager li.active {
+    color: #f89524;
+    font-weight: bold;
+}
+
+/* 对话框动画 */
+.el-dialog {
+    border-radius: 16px !important;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(248, 149, 36, 0.15) !important;
+}
+
+.el-dialog__header {
+    background: linear-gradient(90deg, #fff8f0 0%, #fff 100%);
+    padding: 20px !important;
+    border-bottom: 2px solid #f89524;
+}
+
+.el-dialog__title {
+    font-weight: 600;
+    color: #f89524;
+}
+
+/* 选择器样式 */
+.el-select-dropdown__item.selected {
+    color: #f89524;
+    font-weight: bold;
+}
+
+.el-select-dropdown__item:hover {
+    background-color: #fff8f0;
+}
+
+/* 下拉菜单 */
+.el-dropdown-menu__item--divided {
+    border-top: 1px solid #f89524;
+}
+
+/* 全屏模式样式 */
+.drawer-content:-webkit-full-screen {
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.drawer-content:-moz-full-screen {
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.drawer-content:-ms-fullscreen {
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.drawer-content:fullscreen {
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
