@@ -1,28 +1,24 @@
 package com.example.springboot.common;
 
-import org.springframework.context.annotation.Bean;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.lang.NonNull;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
-public class InterceptorConfig extends WebMvcConfigurationSupport {
+public class InterceptorConfig implements WebMvcConfigurer {
+
+    @Autowired
+    private JwtInterceptor jwtInterceptor;
 
     @Override
-    protected void addInterceptors(@NonNull InterceptorRegistry registry) {
+    public void addInterceptors(InterceptorRegistry registry) {
         // 配置jwt的拦截器规则
-        registry.addInterceptor(jwtInterceptor())
+        registry.addInterceptor(jwtInterceptor)
                 // 拦截所有的请求路径
                 .addPathPatterns("/**")
                 // 放行以下接口
-                .excludePathPatterns("/login", "/register", "/password", "/type/**", "/goods/**");
-        super.addInterceptors(registry);
-    }
-
-    @Bean
-    public @NonNull JwtInterceptor jwtInterceptor() {
-        return new JwtInterceptor();
+                .excludePathPatterns("/login", "/register", "/password", "/type/**", "/goods/**", "/file/**");
     }
 
 }

@@ -80,16 +80,7 @@ export default {
       this.menuList = this.menuList.filter(item => (item.text === "首页" || item.text === "全部商品"));
     }
   },
-  mounted() {
-    // 初始化AI聊天
-    if (typeof window.createAiChat === 'function') {
-      window.createAiChat({
-        appId:"2033102557596880898",
-        // 支持top-left左上, top-right右上, bottom-left左下, bottom-right右下
-        iconPosition:"bottom-right"
-      });
-    }
-  },
+
   methods: {
     goPage(path) {
       this.$router.push(path);
@@ -107,6 +98,6 @@ export default {
 </script>
 
 <style scoped>
-@import "~@/assets/css/front.css";
+@import "../../assets/css/front.css";
 
 </style>

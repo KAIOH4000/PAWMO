@@ -116,7 +116,9 @@ public class OrdersController {
         } catch (ServiceException e) {
             return Result.error(e.getCode(), e.getMessage());
         } catch (Exception e) {
-            return Result.error("支付失败：" + e.getMessage());
+            log.error("支付失败", e);
+            e.printStackTrace();
+            return Result.error("500", "系统错误：" + e.getMessage());
         }
     }
 

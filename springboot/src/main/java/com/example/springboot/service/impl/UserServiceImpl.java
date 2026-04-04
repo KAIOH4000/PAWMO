@@ -51,7 +51,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
             throw new ServiceException("用户名或密码错误");
         }
         // 生成token
-        String token = TokenUtils.createToken(dbUser.getId().toString(), dbUser.getPassword());
+        String token = TokenUtils.createToken(dbUser.getId().toString());
         dbUser.setToken(token);
         return dbUser;
     }

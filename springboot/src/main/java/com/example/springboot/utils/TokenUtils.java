@@ -16,12 +16,13 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import java.util.Date;
 
 /**
- * token工具类
+ * token 工具类
  */
 @Component
 public class TokenUtils {
 
     private static UserMapper staticUserMapper;
+    public static final String SIGN_KEY = "miyaoshishenme"; // 全局统一密钥
 
     @Autowired
     private UserMapper userMapper;
@@ -32,12 +33,12 @@ public class TokenUtils {
     }
 
     /**
-     * 生成token
+     * 生成 token
      */
-    public static String createToken(String userId, String sign) {
-        return JWT.create().withAudience(userId) // 将 user id 保存到 token 里面,作为载荷
-                .withExpiresAt(DateUtil.offsetDay(new Date(), 7)) // 7天后token过期
-                .sign(Algorithm.HMAC256(sign)); // 以 password 作为 token 的密钥
+    public static String createToken(String userId) {
+        return JWT.create().withAudience(userId) // 将 user id 保存到 token 里面，作为载荷
+                .withExpiresAt(DateUtil.offsetDay(new Date(), 7)) // 7 天后 token 过期
+                .sign(Algorithm.HMAC256(SIGN_KEY)); // 以 password 作为 token 的密钥
     }
 
     /**
@@ -61,4 +62,3 @@ public class TokenUtils {
         return null;
     }
 }
-
