@@ -19,26 +19,14 @@
 
 	<repositories>
 		<repository>
-			<id>aliyun</id>
-			<name>aliyun</name>
+			<id>aliyun-maven</id>
 			<url>https://maven.aliyun.com/repository/public</url>
-		</repository>
-		<repository>
-			<id>central</id>
-			<name>central</name>
-			<url>https://repo1.maven.org/maven2/</url>
 		</repository>
 	</repositories>
 	<pluginRepositories>
 		<pluginRepository>
-			<id>aliyun</id>
-			<name>aliyun</name>
+			<id>aliyun-maven</id>
 			<url>https://maven.aliyun.com/repository/public</url>
-		</pluginRepository>
-		<pluginRepository>
-			<id>central</id>
-			<name>central</name>
-			<url>https://repo1.maven.org/maven2/</url>
 		</pluginRepository>
 	</pluginRepositories>
 
@@ -124,7 +112,7 @@
 		<dependency>
 			<groupId>com.alipay.sdk</groupId>
 			<artifactId>alipay-sdk-java</artifactId>
-			<version>4.38.157.ALL</version>
+			<version>4.39.79.ALL</version>
 		</dependency>
 	</dependencies>
 
