@@ -1,0 +1,67 @@
+-------------------------------------------------------------------------------
+Test set: com.example.springboot.service.UserServiceTests
+-------------------------------------------------------------------------------
+Tests run: 10, Failures: 2, Errors: 1, Skipped: 0, Time elapsed: 1.808 s <<< FAILURE! -- in com.example.springboot.service.UserServiceTests
+com.example.springboot.service.UserServiceTests.testLoginSuccess -- Time elapsed: 0.514 s <<< ERROR!
+com.example.springboot.exception.ServiceException: 用户名或密码错误
+	at com.example.springboot.service.impl.UserServiceImpl.login(UserServiceImpl.java:48)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:354)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:716)
+	at com.example.springboot.service.impl.UserServiceImpl$$SpringCGLIB$$0.login(<generated>)
+	at com.example.springboot.service.UserServiceTests.testLoginSuccess(UserServiceTests.java:64)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+com.example.springboot.service.UserServiceTests.testUpdatePassword -- Time elapsed: 0.016 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Unexpected exception thrown: com.example.springboot.exception.ServiceException: 原始密码错误
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
+	at org.junit.jupiter.api.AssertDoesNotThrow.createAssertionFailedError(AssertDoesNotThrow.java:84)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:53)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:36)
+	at org.junit.jupiter.api.Assertions.assertDoesNotThrow(Assertions.java:3168)
+	at com.example.springboot.service.UserServiceTests.testUpdatePassword(UserServiceTests.java:114)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.example.springboot.exception.ServiceException: 原始密码错误
+	at com.example.springboot.service.impl.UserServiceImpl.updatePassword(UserServiceImpl.java:90)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:354)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:716)
+	at com.example.springboot.service.impl.UserServiceImpl$$SpringCGLIB$$0.updatePassword(<generated>)
+	at com.example.springboot.service.UserServiceTests.lambda$testUpdatePassword$2(UserServiceTests.java:115)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:49)
+	... 6 more
+
+com.example.springboot.service.UserServiceTests.testResetPassword -- Time elapsed: 0.016 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Unexpected exception thrown: com.example.springboot.exception.ServiceException: 用户不存在
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
+	at org.junit.jupiter.api.AssertDoesNotThrow.createAssertionFailedError(AssertDoesNotThrow.java:84)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:53)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:36)
+	at org.junit.jupiter.api.Assertions.assertDoesNotThrow(Assertions.java:3168)
+	at com.example.springboot.service.UserServiceTests.testResetPassword(UserServiceTests.java:125)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: com.example.springboot.exception.ServiceException: 用户不存在
+	at com.example.springboot.service.impl.UserServiceImpl.resetPassword(UserServiceImpl.java:77)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:354)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:716)
+	at com.example.springboot.service.impl.UserServiceImpl$$SpringCGLIB$$0.resetPassword(<generated>)
+	at com.example.springboot.service.UserServiceTests.lambda$testResetPassword$3(UserServiceTests.java:126)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:49)
+	... 6 more
+
