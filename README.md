@@ -76,9 +76,12 @@
 4.  项目默认启动在 `http://localhost:8080`。在浏览器中打开此地址即可访问。
 
 ## 5. 项目演示
-<img width="927" height="420" alt="image" src="https://github.com/user-attachments/assets/11b96edd-ab7b-40ea-ab45-46dde96ff8fa" />
-<img width="927" height="420" alt="image" src="https://github.com/user-attachments/assets/5c76de15-52dc-49a5-8dd8-34edd860153b" />
-<img width="927" height="420" alt="image" src="https://github.com/user-attachments/assets/92a81d8a-0ed9-409f-8f98-a3c385119e49" />
+<img width="1360" height="615" alt="图片1" src="https://github.com/user-attachments/assets/fcabc78b-a727-4d16-b8ac-970e3720f50e" />
+<img width="1360" height="615" alt="图片2" src="https://github.com/user-attachments/assets/659c3649-3d80-449f-b238-edc1e04065be" />
+<img width="1360" height="615" alt="图片3" src="https://github.com/user-attachments/assets/82e692fb-13a5-4fab-885f-5a1afa21d2c1" />
+<img width="1360" height="615" alt="图片4" src="https://github.com/user-attachments/assets/e0f8195c-b723-434c-a89e-c8a440076115" />
+<img width="1360" height="615" alt="图片5" src="https://github.com/user-attachments/assets/799f886a-e149-4703-b83d-6d23097ef6e4" />
+<img width="593" height="269" alt="图片7" src="https://github.com/user-attachments/assets/15184f42-d562-4fb6-8dd6-e8179255f9c4" />
 
 - **登录页面**: `http://localhost:8080/login`
 - **默认管理员账号**: `admin` / `123`
