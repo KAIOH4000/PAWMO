@@ -76,8 +76,10 @@
 4.  项目默认启动在 `http://localhost:8080`。在浏览器中打开此地址即可访问。
 
 ## 5. 项目演示
+<img width="927" height="420" alt="image" src="https://github.com/user-attachments/assets/11b96edd-ab7b-40ea-ab45-46dde96ff8fa" />
 <img width="927" height="420" alt="image" src="https://github.com/user-attachments/assets/5c76de15-52dc-49a5-8dd8-34edd860153b" />
+<img width="927" height="420" alt="image" src="https://github.com/user-attachments/assets/92a81d8a-0ed9-409f-8f98-a3c385119e49" />
 
 - **登录页面**: `http://localhost:8080/login`
-- **默认管理员账号**: `admin` / `admin`
-- **默认普通用户账号**: `zhangsan` / `123456`
+- **默认管理员账号**: `admin` / `123`
+- **默认普通用户账号**: `tset3` / `123456`
